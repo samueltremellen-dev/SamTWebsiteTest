@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -47,7 +47,7 @@
       pointer-events: none;
       z-index: 0;
     }
-    
+
     body::after {
       content: '';
       position: fixed;
@@ -448,7 +448,7 @@
   <script>
     var beamer_config = {
       product_id : "ovDzWvcX83136",
-      selector   : "#beamer-trigger",
+      selector   : "beamer-trigger",
       user_id    : "user's unique id"
     };
   </script>
