@@ -97,44 +97,6 @@
 
     .logo-text span { color: var(--cyan); }
 
-    #beamer-trigger {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--cyan);
-      border: 1px solid var(--cyan-border);
-      background: var(--cyan-dim);
-      padding: 0.55em 1.1em;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6em;
-      transition: all 0.2s ease;
-      clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
-    }
-
-    #beamer-trigger::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--cyan);
-      border-radius: 50%;
-      flex-shrink: 0;
-      animation: blink 1.5s ease infinite;
-    }
-
-    #beamer-trigger:hover {
-      background: rgba(0,229,255,0.18);
-      border-color: var(--cyan);
-      box-shadow: 0 0 16px rgba(0,229,255,0.2);
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.2; }
-    }
-
     main {
       position: relative;
       z-index: 1;
@@ -385,7 +347,7 @@
       <div class="logo-mark">ST</div>
       <div class="logo-text">Sam <span>Tremellen</span></div>
     </div>
-    <div id="beamer-trigger">What's new</div>
+    <div class="announcekit-widget"></div>
   </header>
 
   <main>
@@ -443,16 +405,6 @@
   </footer>
 
   <div id="toast"></div>
-
-  <!-- Beamer Widget -->
-  <script>
-    var beamer_config = {
-      product_id : "ovDzWvcX83136",
-      selector   : "beamer-trigger",
-      user_id    : "user's unique id"
-    };
-  </script>
-  <script type="text/javascript" src="https://app.getbeamer.com/js/beamer-embed.js" defer="defer"></script>
 
   <script>
     const logEl = document.getElementById('log');
