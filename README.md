@@ -6,23 +6,32 @@
   <title>Sam Tremellen</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.announcekit-widget {
+  color: var(--cyan);
+  border: 1px solid var(--cyan-border);
+  background: var(--cyan-dim);
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.2s ease;
+  font-family: 'JetBrains Mono', monospace;
 
-    :root {
-      --bg: #080c14;
-      --surface: #0e1420;
-      --surface2: #141c2e;
-      --cyan: #00e5ff;
-      --cyan-dim: rgba(0,229,255,0.10);
-      --cyan-border: rgba(0,229,255,0.25);
-      --text: #e8edf5;
-      --muted: #5a6a85;
-      --muted2: #3a4a60;
-      --border: rgba(255,255,255,0.06);
-      --danger: #ff4d6a;
-      --success: #00e5a0;
-      --amber: #ffc94d;
-    }
+  clip-path: polygon(
+    0 0,
+    calc(100% - 8px) 0,
+    100% 8px,
+    100% 100%,
+    8px 100%,
+    0 calc(100% - 8px)
+  );
+}
+
+.announcekit-widget:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 12px rgba(0,229,255,0.25);
+}
 
     html { scroll-behavior: smooth; }
 
@@ -58,6 +67,25 @@
       background: radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
+      <script>
+  window.announcekit = (window.announcekit || {
+    queue: [],
+    on: function(n, x) {
+      window.announcekit.queue.push([n, x]);
+    },
+    push: function(x) {
+      window.announcekit.queue.push(x);
+    }
+  });
+
+  window.announcekit.push({
+    widget: "https://announcekit.co/widgets/v2/27htEQ",
+    selector: ".announcekit-widget",
+    lang: "en"
+  });
+</script>
+
+<script async src="https://cdn.announcekit.app/widget-v2.js"></script>
     }
 
     header {
@@ -342,13 +370,14 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <div class="logo-mark">ST</div>
-      <div class="logo-text">Sam <span>Tremellen</span></div>
-    </div>
-    <div class="announcekit-widget"></div>
-  </header>
+<header>
+  <div class="logo">
+    <div class="logo-mark">ST</div>
+    <div class="logo-text">Sam <span>Tremellen</span></div>
+  </div>
+
+  <div class="announcekit-widget">What's New</div>
+</header>
 
   <main>
 
