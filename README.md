@@ -452,5 +452,18 @@
     updateClock();
     setInterval(updateClock, 1000);
   </script>
+
+  <!-- AnnounceKit Widget -->
+  <script>
+    window.announcekit = (window.announcekit || { queue: [], on: function(n, x) {
+      window.announcekit.queue.push([n, x]); }, push: function(x) { window.announcekit.queue.push(x); }
+    });
+    window.announcekit.push({
+      "widget": "https://announcekit.co/widgets/v2/2IKwPm",
+      "selector": ".announcekit-widget"
+    })
+  </script>
+  <script async src="https://cdn.announcekit.app/widget-v2.js"></script>
+
 </body>
 </html>
